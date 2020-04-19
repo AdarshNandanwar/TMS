@@ -7,7 +7,7 @@ from django.utils import timezone as datetime
 
 import re 
 def validate_contact(value): 
-    Pattern = re.compile("(0/91)?[7-9][0-9]{9}") 
+    Pattern = re.compile("[5-9][0-9]{9}") 
     return Pattern.match(value) 
     
 def get_application_status(userprofile):
