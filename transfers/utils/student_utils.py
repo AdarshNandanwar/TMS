@@ -5,6 +5,11 @@ from django.http import JsonResponse
 from transfers.models import PS2TSTransfer, TS2PSTransfer, DeadlineModel
 from django.utils import timezone as datetime
 
+import re 
+def validate_contact(value): 
+    Pattern = re.compile("(0/91)?[7-9][0-9]{9}") 
+    return Pattern.match(value) 
+    
 def get_application_status(userprofile):
     status = None
     alias = None
@@ -119,6 +124,7 @@ def notify_ts2ps(request):
     mail(str(data.hod_email),str(data.applicant.user.username),body)
 
 def mail(email, username, body):
+    email = "f20180396@goa.bits-pilani.ac.in"
     send_mail("Transfer Application: " + username, body,
         'psdiary.bits@gmail.com',[email],
         fail_silently=False)
