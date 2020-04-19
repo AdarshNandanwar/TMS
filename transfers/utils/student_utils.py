@@ -124,7 +124,6 @@ def notify_ts2ps(request):
     mail(str(data.hod_email),str(data.applicant.user.username),body)
 
 def mail(email, username, body):
-    email = "f20180396@goa.bits-pilani.ac.in"
     send_mail("Transfer Application: " + username, body,
         'psdiary.bits@gmail.com',[email],
         fail_silently=False)
