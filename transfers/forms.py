@@ -3,7 +3,7 @@ from tempus_dominus.widgets import DateTimePicker
 from .models import PS2TSTransfer, TS2PSTransfer, UserProfile, DeadlineModel
 
 class PS2TSTransferForm(forms.ModelForm):
-    contact = forms.CharField(max_length=20, label="Phone Number", required=True)
+    contact = forms.CharField(max_length=20, label="10 Digit Mobile Number", required=True)
     class Meta:  
         model = PS2TSTransfer  
         fields = ['contact', 'applicant', 'supervisor_email', 'hod_email', 'sub_type', 'cgpa', 'thesis_locale', 'thesis_subject', 'name_of_org', 'expected_deliverables']
@@ -17,7 +17,7 @@ class PS2TSTransferForm(forms.ModelForm):
 
 
 class TS2PSTransferForm(forms.ModelForm):
-    contact = forms.CharField(max_length=20, label="Phone Number", required=True)
+    contact = forms.CharField(max_length=20, label="10 Digit Mobile Number", required=True)
     class Meta:  
         model = TS2PSTransfer  
         fields = ['contact', 'applicant', 'hod_email', 'sub_type', 'cgpa', 'reason_for_transfer', 'name_of_org']
